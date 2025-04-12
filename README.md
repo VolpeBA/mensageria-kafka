@@ -46,7 +46,7 @@ POST /kafka
   "assunto": "Promoção de Primavera",
   "tipoMensagem": "EMAIL"
 }
-
+```
 ⚙️ Configurações
 Servidor Kafka: localhost:9092 (configurável via application.properties)
 
