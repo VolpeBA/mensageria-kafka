@@ -1,0 +1,101 @@
+# 📬 Produtor e Consumidor Kafka
+
+Este projeto demonstra a comunicação assíncrona entre dois serviços — **Produtor** e **Consumidor** — utilizando **Apache Kafka**.  
+O **Produtor** envia mensagens para um tópico Kafka, enquanto o **Consumidor** escuta e processa essas mensagens.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- 💻 Java 21  
+- ⚙️ Spring Boot 3.4.4  
+- 📡 Apache Kafka  
+- 🛠️ Spring Kafka  
+- 📘 Springdoc OpenAPI  
+- 🧰 Gradle
+
+---
+
+## 🧱 Estrutura do Projeto
+├── produtor │ 
+  ├── src/main/java/com/volpe/produtor │ 
+  ├── src/main/resources/application.properties │ 
+  └── build.gradle 
+├── consumidor │ 
+  ├── src/main/java/com/volpe/consumidor │ 
+  ├── src/main/resources/application.properties │ 
+  └── build.gradle 
+  └── README.md
+
+
+---
+
+## 📨 Produtor
+
+O serviço **Produtor** é responsável por enviar mensagens para um tópico Kafka via API REST.
+
+### 🔗 Endpoint
+POST /kafka
+
+
+### 📦 Payload de Exemplo
+```json
+{
+  "nome": "João da Silva",
+  "destinatario": "maria@email.com",
+  "assunto": "Promoção de Primavera",
+  "tipoMensagem": "EMAIL"
+}
+
+⚙️ Configurações
+Servidor Kafka: localhost:9092 (configurável via application.properties)
+
+Tópico Kafka: messages-topic
+
+📚 Documentação da API
+Acesse via Swagger:
+http://localhost:8080/swagger-ui.html
+
+📥 Consumidor
+O serviço Consumidor escuta o tópico Kafka e processa as mensagens enviadas pelo Produtor.
+
+Configurado para escutar o tópico messages-topic
+
+Processamento baseado nos dados recebidos
+
+▶️ Como Executar
+✅ Pré-requisitos
+Java 21 instalado
+
+Apache Kafka em execução
+
+Gradle instalado
+
+📌 Passos
+Clone o repositório:
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
+Inicie o servidor Kafka:
+Certifique-se de que o Kafka está rodando em localhost:9092
+
+Execute o Produtor:
+./gradlew :produtor:bootRun
+
+Execute o Consumidor:
+./gradlew :consumidor:bootRun
+
+Acesse a documentação do Produtor:
+http://localhost:8080/swagger-ui.html
+
+⚙️ Configurações dos Serviços
+🔧 application.properties do Produtor
+spring.application.name=produtor
+kafka.bootstrap.servers=localhost:9092
+kafka.topic=messages-topic
+
+🔧 application.properties do Consumidor
+spring.application.name=consumidor
+kafka.bootstrap.servers=localhost:9092
+kafka.topic=messages-topic
+
