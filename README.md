@@ -123,16 +123,3 @@ spring.application.name=consumidor
 kafka.bootstrap.servers=localhost:9092
 kafka.topic=messages-topic
 ```
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
-
-## 👤 Autor
-
-Feito com 💻 por **Bruno Volpe**  
-[🔗 GitHub](https://github.com/seu-usuario) | [📧 E-mail](mailto:seu-email@exemplo.com)
